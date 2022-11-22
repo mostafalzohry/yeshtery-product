@@ -1,0 +1,207 @@
+// start variable
+$primary-color: #fff200;
+$secondary-color: #542e90;
+* {
+  box-sizing: border-box;
+}
+
+
+// start classes
+
+
+.new_price {
+  color: $secondary-color;
+}
+.discount {
+  background-color: $primary-color;
+}
+.star {
+  width: 20px;
+  height: 20px;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  background-color: #ccc !important;
+  &.active {
+    background-color: #e09b00 !important;
+  }
+}
+img.rotate {
+  width: 30px;
+  cursor: pointer;
+}
+
+.buttons {
+  button:first-of-type {
+    background-color: $secondary-color;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+  button:last-of-type {
+    background-color: $primary-color;
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+}
+
+// start sections
+.navbar {
+  background-color: $primary-color !important;
+  .shop-now {
+    font-size: 14px;
+  }
+}
+
+.categories {
+  a {
+    transition: 0.3s;
+    &:hover,
+    &.active {
+      color: red !important;
+    }
+  }
+}
+
+.similar-products {
+  h3 {
+    color: $secondary-color;
+  }
+  .line {
+    height: 2px;
+    background-color: #ccc;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 65%;
+      height: 4px;
+      background-color: $secondary-color;
+    }
+  }
+}
+
+.main-product {
+  .sizes {
+    .size {
+      width: 80px;
+      height: 80px;
+      color: $secondary-color;
+    }
+  }
+  .colors {
+    img:first-of-type {
+      border: 2px solid $secondary-color;
+      border-radius: 50%;
+    }
+  }
+  .quantitiy {
+    button {
+      color: $secondary-color;
+      span {
+        width: 35px;
+        height: 35px;
+        background-color: $primary-color;
+      }
+    }
+  }
+}
+
+.offcanvas {
+  width: 550px !important;
+  max-width: 100%;
+  .offcanvas-title {
+    color: $secondary-color;
+  }
+  .remove {
+    background-color: $primary-color;
+    &:hover {
+      background-color: $primary-color !important;
+    }
+  }
+}
+
+.footer {
+  .subscribe {
+    input[type="email"]::placeholder {
+      color: $secondary-color;
+    }
+    button {
+      background-color: $primary-color;
+      &:hover {
+        background-color: $primary-color;
+        color: black;
+      }
+    }
+  }
+  a {
+    transition: 0.3s;
+    &:hover {
+      padding-left: 10px;
+      color: $primary-color !important;
+    }
+  }
+  li {
+    img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.loading {
+  div {
+    width: 20px;
+    height: 20px;
+    background: $secondary-color;
+    margin: 2px;
+    animation: loading 1.5s ease-in-out infinite;
+  }
+  :first-child {
+    animation-delay: 0s;
+  }
+  :nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  :nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  :last-child {
+    animation-delay: 0.9s;
+  }
+}
+
+// start animations
+@keyframes loading {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  padding: 0px;
+}
+
+
