@@ -11,7 +11,7 @@ class Cart extends Component {
     );
 
     const product_list = data.map(
-      ({ img, discription, count, new_price, id, quantityincart }) => {
+      ({ img, discription, count, new_price, id }) => {
         return (
           <div className="card mb-3 p-2" key={id}>
             <div className="row g-0">
@@ -26,9 +26,7 @@ class Cart extends Component {
 
                   <div className="d-flex flex-wrap align-items-center justify-content-between">
                     <div className="new_price fw-bold">
-                      <span className="fs-4 me-1">
-                        {count * new_price}
-                      </span>
+                      <span className="fs-4 me-1">{count * new_price}</span>
                       LE
                     </div>
 
@@ -38,6 +36,18 @@ class Cart extends Component {
                     >
                       Remove
                     </button>
+                    <div className="total text-center fw-bold fs-3">
+                      Total: {total_price} LE
+                    </div>
+
+                    <div className="buttons d-flex gap-4 flex-wrap my-3">
+                      <button className="btn text-white fw-semibold rounded-pill flex-grow-1 py-2">
+                        Review Cart
+                      </button>
+                      <button className="btn text-black fw-semibold rounded-pill flex-grow-1 py-2">
+                        Complete Chechout
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -76,27 +86,11 @@ class Cart extends Component {
           ></button>
         </div>
 
-        {/* offcanvas-body */}
         <div className="offcanvas-body">
           <h5 className="fw-bold mb-4">Cart Summary</h5>
 
           <div className="products">
-            {/* start product */}
             {data.length === 0 ? empty_cart : product_list}
-            {/* end product */}
-
-            <div className="total text-center fw-bold fs-3">
-              Total: {total_price} LE
-            </div>
-
-            <div className="buttons d-flex gap-4 flex-wrap my-3">
-              <button className="btn text-white fw-semibold rounded-pill flex-grow-1 py-2">
-                Review Cart
-              </button>
-              <button className="btn text-black fw-semibold rounded-pill flex-grow-1 py-2">
-                Complete Chechout
-              </button>
-            </div>
           </div>
         </div>
       </div>
