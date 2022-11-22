@@ -10,9 +10,16 @@ class Cart extends Component {
       <div className="alert alert-info fw-bold text-center">Empty Cart</div>
     );
 
+
+    let total_price = 0;
+    data.forEach((product) => {
+      total_price += product.count * product.new_price;
+    });
+
     const product_list = data.map(
       ({ img, discription, count, new_price, id }) => {
         return (
+          <div>
           <div className="card mb-3 p-2" key={id}>
             <div className="row g-0">
               <div className="col-md-4">
@@ -36,6 +43,15 @@ class Cart extends Component {
                     >
                       Remove
                     </button>
+
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+
+
+     
                     <div className="total text-center fw-bold fs-3">
                       Total: {total_price} LE
                     </div>
@@ -48,19 +64,13 @@ class Cart extends Component {
                         Complete Chechout
                       </button>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+                    </div>
+                  
         );
       }
     );
 
-    let total_price = 0;
-    data.forEach((product) => {
-      total_price += product.count * product.new_price;
-    });
+    
 
     return (
       <div
